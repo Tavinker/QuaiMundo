@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>QualiMundo</name>
+    <description>Jogo de correr e atirar</description>
+    <version>1.0.0.0</version>
+    <author>Gabriel Tavares / Albert Lima</author>
+    <author-email>287562020@eniac.edu.br</author-email>
+    <author-website>http://</author-website>
+    <app-id>com.eniac.qualimundo</app-id>
+    <unique-id>1huy1f1aajwy2</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>level_1</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="obj_colision" sid="130603444320800">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="644884659938187">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="927347862540135" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_player" sid="558505659938599">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="127075037092622">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="966328474495476" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="715720011903180">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="obj_player_animation" sid="686024625750685">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="inst_state" sid="633860699265307" type="string" />
+                <instance-variable name="can_shoot" sid="194500875917549" type="boolean" />
+                <instance-variable name="inst_health" sid="226025593822486" type="number" />
+                <instance-variable name="inst_vida" sid="170306180463399" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="472244600332096">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="10" loop="1" name="ID_IDLE" pingpong="0" repeatcount="1" repeatto="0" sid="533841784399809" speed="5">
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976596" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (1).png">
+                        <image-point name="Bullet" x="0.832727" y="0.57234" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976496" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (2).png">
+                        <image-point name="Bullet" x="0.832727" y="0.57265" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976445" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (3).png">
+                        <image-point name="Bullet" x="0.832727" y="0.571734" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976344" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (4).png">
+                        <image-point name="Bullet" x="0.832727" y="0.572043" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976344" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (5).png">
+                        <image-point name="Bullet" x="0.832727" y="0.572043" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976344" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (6).png">
+                        <image-point name="Bullet" x="0.832727" y="0.572043" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976395" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (7).png">
+                        <image-point name="Bullet" x="0.832727" y="0.572961" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976445" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (8).png">
+                        <image-point name="Bullet" x="0.832727" y="0.571734" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976496" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (9).png">
+                        <image-point name="Bullet" x="0.832727" y="0.57265" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.509091" hotspotY="0.976546" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Idle (10).png">
+                        <image-point name="Bullet" x="0.832727" y="0.571429" />
+                    </frame>
+                </animation>
+                <animation framecount="8" loop="0" name="ID_WALK" pingpong="0" repeatcount="1" repeatto="0" sid="129252096861682" speed="15">
+                    <frame duration="1" hotspotX="0.50193" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (1).png">
+                        <image-point name="Bullet" x="0.915058" y="0.546392" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (2).png">
+                        <image-point name="Bullet" x="0.914063" y="0.546559" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.50152" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (3).png">
+                        <image-point name="Bullet" x="0.765957" y="0.56129" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (4).png">
+                        <image-point name="Bullet" x="0.913462" y="0.546219" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (5).png">
+                        <image-point name="Bullet" x="0.916107" y="0.54717" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.501484" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (6).png">
+                        <image-point name="Bullet" x="0.913947" y="0.547284" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (7).png">
+                        <image-point name="Bullet" x="0.915761" y="0.54661" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.501587" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Run (8).png">
+                        <image-point name="Bullet" x="0.914286" y="0.546973" />
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="0" name="ID_JUMP" pingpong="0" repeatcount="1" repeatto="0" sid="759892435468676" speed="10">
+                    <frame duration="1" hotspotX="0.385321" hotspotY="0.991718" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Jump (2).png" />
+                    <frame duration="1" hotspotX="0.52924" hotspotY="0.977827" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Jump (3).png" />
+                    <frame duration="1" hotspotX="0.556851" hotspotY="0.977578" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Jump (4).png" />
+                    <frame duration="1" hotspotX="0.592068" hotspotY="0.97907" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Jump (5).png" />
+                </animation>
+                <animation framecount="1" loop="0" name="ID_FALL" pingpong="0" repeatcount="1" repeatto="0" sid="371685937755284" speed="5">
+                    <frame duration="1" hotspotX="0.583099" hotspotY="0.931864" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Jump (9).png" />
+                </animation>
+                <animation framecount="4" loop="0" name="ID_SHOOT" pingpong="0" repeatcount="1" repeatto="0" sid="833365302676643" speed="5">
+                    <frame duration="1" hotspotX="0.48048" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Shoot (1).png">
+                        <image-point name="Bullet" x="0.954955" y="0.410256" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.515152" hotspotY="0.993576" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Shoot (2).png">
+                        <image-point name="Bullet" x="0.945455" y="0.364026" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.462006" hotspotY="0.991471" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Shoot (3).png">
+                        <image-point name="Bullet" x="0.948328" y="0.420043" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.431548" hotspotY="0.991471" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Shoot (4).png">
+                        <image-point name="Bullet" x="0.955357" y="0.479744" />
+                    </frame>
+                </animation>
+                <animation framecount="9" loop="0" name="ID_RUN_SHOOT" pingpong="0" repeatcount="1" repeatto="0" sid="448035520860752" speed="5">
+                    <frame duration="1" hotspotX="0.356725" hotspotY="0.971134" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (1).png">
+                        <image-point name="Bullet" x="0.964912" y="0.525773" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.304945" hotspotY="0.969636" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (2).png">
+                        <image-point name="Bullet" x="0.964286" y="0.495951" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.395664" hotspotY="0.987097" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (3).png">
+                        <image-point name="Bullet" x="0.97019" y="0.513978" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.426396" hotspotY="0.97479" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (4).png">
+                        <image-point name="Bullet" x="0.964467" y="0.52521" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.250704" hotspotY="0.974843" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (5).png">
+                        <image-point name="Bullet" x="0.966197" y="0.526205" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.376" hotspotY="0.983903" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (6).png">
+                        <image-point name="Bullet" x="0.968" y="0.488934" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.478803" hotspotY="0.978814" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (7).png">
+                        <image-point name="Bullet" x="0.967581" y="0.495763" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.364902" hotspotY="0.981211" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (8).png">
+                        <image-point name="Bullet" x="0.963788" y="0.526096" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.409357" hotspotY="0.985106" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\RunShoot (9).png">
+                        <image-point name="Bullet" x="0.964912" y="0.525532" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tbg_box" sid="213537329915798">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\BGTile (5).png" />
+        </object-type>
+        <object-type name="tbg_floor_middle" sid="248662137674566">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (2).png" />
+        </object-type>
+        <object-type name="tbg_floor_center" sid="209707889908561">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (5).png" />
+        </object-type>
+        <object-type name="obj_floor_corner" sid="672489503278379">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="483864481376177" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (1).png">
+                        <collision-poly>
+                            <point x="0.0195313" y="0.0195313" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0429688" y="0.957031" />
+                            <point x="0.0976563" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (3).png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.980469" y="0.0195313" />
+                            <point x="0.902344" y="0.5" />
+                            <point x="0.957031" y="0.957031" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (12).png">
+                        <collision-poly>
+                            <point x="0.0195313" y="0.0195313" />
+                            <point x="1" y="0" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (14).png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.980469" y="0.0195313" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tbg_inside_right" sid="432218112180352">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (6).png" />
+        </object-type>
+        <object-type name="tbg_inside_left" sid="771360095766348">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (4).png" />
+        </object-type>
+        <object-type name="Sprite" sid="390845835670598">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="905497658135083" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (6).png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0" />
+                            <point x="0.957031" y="0.0429688" />
+                            <point x="0.902344" y="0.5" />
+                            <point x="0.957031" y="0.957031" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="224828952966419">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="803019116106276" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_bullet" sid="397448651147600">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="life" sid="921376321714432" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="289267061163552">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="5" loop="1" name="ID_IDLE" pingpong="0" repeatcount="1" repeatto="0" sid="358545668392921" speed="10">
+                    <frame duration="1" hotspotX="0" hotspotY="0.503597" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Bullet_000.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.503597" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Bullet_001.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.503597" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Bullet_002.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.503597" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Bullet_003.png" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.503597" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Bullet_004.png" />
+                </animation>
+                <animation framecount="5" loop="0" name="ID_MUZZLE" pingpong="0" repeatcount="1" repeatto="0" sid="409595569872508" speed="10">
+                    <frame duration="1" hotspotX="-9.31579" hotspotY="0.493776" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Muzzle_000.png" />
+                    <frame duration="1" hotspotX="-9.31579" hotspotY="0.493776" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Muzzle_001.png" />
+                    <frame duration="1" hotspotX="-9.31579" hotspotY="0.493776" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Muzzle_002.png" />
+                    <frame duration="1" hotspotX="-9.31579" hotspotY="0.493776" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Muzzle_003.png" />
+                    <frame duration="1" hotspotX="-9.31579" hotspotY="0.493776" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Player\png\Objects\Muzzle_004.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tbg_acid_top" sid="715855680334926">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Sine" sid="321921724997869">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Acid (1).png" />
+        </object-type>
+        <object-type name="tbg_acid_middle" sid="175527535764225">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Sine" sid="295525005926020">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Acid (2).png" />
+        </object-type>
+        <object-type name="Sprite3" sid="403369492261150">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="635361109397069" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_enemy_bug" sid="423401001522083">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="bug_life" sid="609286331359971" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="SineHorizontal" sid="738677841967148">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="640068081245847">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="965992962509000" speed="5">
+                    <frame duration="1" hotspotX="0.484211" hotspotY="0.526316" original-source="C:\Users\Gabriel\Documents\sprites sprint 2\Final\ENEMY-BUG.png">
+                        <collision-poly>
+                            <point x="0.097836" y="0.117348" />
+                            <point x="0.480298" y="0" />
+                            <point x="0.812601" y="0.172905" />
+                            <point x="1" y="0.522586" />
+                            <point x="0.865895" y="0.931091" />
+                            <point x="0.480298" y="1" />
+                            <point x="0.15113" y="0.875534" />
+                            <point x="0" y="0.522586" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_enemy_fly" sid="658905722720270">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="fly_life" sid="291406931475337" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="413741225140276">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="SineHorizontal" sid="563425876632094">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950419600348692" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Documents\sprites sprint 2\Final\ENEMY-CRITIC-BUG.png">
+                        <collision-poly>
+                            <point x="0.367684" y="0.394809" />
+                            <point x="0.5" y="0.170765" />
+                            <point x="0.631043" y="0.396175" />
+                            <point x="0.723919" y="0.5" />
+                            <point x="0.829517" y="0.81694" />
+                            <point x="0.5" y="0.72541" />
+                            <point x="0.0992366" y="0.893443" />
+                            <point x="0.263359" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gui_health_bar" sid="275252579212561">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219628368542127" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_camera" sid="719710176191414">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="626712631864471">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="213491366493084" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_door" sid="104599674870982">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="500383094627984" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Objects\DoorLocked.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Objects\DoorOpen.png">
+                        <collision-poly>
+                            <point x="0.0428571" y="0.0258621" />
+                            <point x="0.5" y="0" />
+                            <point x="0.953571" y="0.0280172" />
+                            <point x="0.996429" y="0.5" />
+                            <point x="0.964286" y="0.978448" />
+                            <point x="0.5" y="0.997845" />
+                            <point x="0.0357143" y="0.978448" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_switch" sid="678469331494097">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="switch_id" sid="896208735007080" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464295464734515" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Objects\Switch (2).png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Objects\Switch (1).png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_box" sid="452662527565378">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="box_id" sid="853826359124275" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="478263815204416" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Objects\Box.png">
+                        <collision-poly>
+                            <point x="0.0664063" y="0.0664063" />
+                            <point x="0.5" y="0" />
+                            <point x="0.933594" y="0.0664063" />
+                            <point x="1" y="0.5" />
+                            <point x="0.929688" y="0.929688" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0703125" y="0.929688" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txt_timer" sid="970988893371071">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="gui_joystick_left" sid="487994806920749">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="913763414484443" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Joystick Virtual\flatDark23.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0" />
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gui_joystick_right" sid="168093187513103">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="499399456125433" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Joystick Virtual\flatDark24.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0" />
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gui_joystick_up" sid="626034401049174">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="538039249330355" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Joystick Virtual\flatDark25.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0" />
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gui_joystick_fire" sid="702044109359265">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="490099969584068" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Joystick Virtual\flatDark48.png">
+                        <collision-poly>
+                            <point x="0.85" y="0.85" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15" y="0.85" />
+                            <point x="0" y="0.5" />
+                            <point x="0.15" y="0.15" />
+                            <point x="0.5" y="0" />
+                            <point x="0.85" y="0.15" />
+                            <point x="1" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="562514366667248">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="obj_flying_platform" sid="558495451961744">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Documents\ENIAC\Game Dev - Projeto Integrador\AssetsPlafatormaPuzzle\Plataforma - Sci Fi And Megaman Robot Background\Background e Items\Tiles\Tile (15).png" />
+        </object-type>
+        <object-type name="obj_boss" sid="331193455903500">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="boss_life" sid="168350502546229" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="699777492907881">
+                    <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="SineHorizontal" sid="929814010759037">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Vertical" sid="489797086869524">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="401761782297057" speed="5">
+                    <frame duration="1" hotspotX="0.491176" hotspotY="0.382353" original-source="C:\Users\Gabriel\Documents\sprites sprint 2\Final\BOSS.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_item_cura" sid="330188209283312">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="927719748455399" speed="5">
+                    <frame duration="1" hotspotX="0.504" hotspotY="0.504" original-source="C:\Users\Gabriel\Documents\sprites sprint 2\Final\ITEM-VIDA-FIX.png">
+                        <collision-poly>
+                            <point x="0.194162" y="0.194162" />
+                            <point x="0.5" y="0.423858" />
+                            <point x="0.978426" y="0.0215736" />
+                            <point x="0.595178" y="0.5" />
+                            <point x="0.805838" y="0.805838" />
+                            <point x="0.5" y="0.595178" />
+                            <point x="0.0406091" y="0.959391" />
+                            <point x="0.384518" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="479715279709395">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Gabriel\Desktop\tela-final.png" />
+        </object-type>
+        <object-type name="Sprite4" sid="179549946930597">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="664554070027700" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Desktop\tela-final.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>level_1.xml</layout>
+        <layout>Final.xml</layout>
+        <layout>GUI.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>game_events.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="2" />
+        <global-instance type="Touch" uid="76">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,18 @@
+LINK DA APRESENTAÇÃO DO JOGO: https://www.youtube.com/watch?v=O7-jF59s2Uo
+LINK PARA JOGAR O JOGO ONLINE: https://www.construct.net/en/free-online-games/qualimundo-66194/play
+
+
+>>>>>>>>>>>>>>>>> INSTRUÇÕES <<<<<<<<<<<<<<<<<<<<<<<<
+
+MOVIMENTAÇÃO:
+- utilize as setas direcionais ou as teclas: AWSD
+- se estiver jogando num dispositivo movel, usar o joystick virtual
+
+COMO JOGAR:
+- Ande com o personagem pelo mapa, desviando dos obstáculos, atirando com a tecla "L" no teclado ou o botão "FIRE" no joystick virtual para derrotar os inimigos e no final acionar a porta de saída e concluir a fase.
+- Cuidado para não sofrer dano dos inimigos pois isso pode reiniciar seu progresso
+- Fique atento ao timer para não ter o progresso reiniciado.
+
+
+
+Divirta-se! :D
