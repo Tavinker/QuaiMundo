@@ -12,7 +12,7 @@ Jogo onde um herói da computação precisa derrotar os bugs presentes no mundo 
 - Jogo: Plataforma
 
 
->>>>>>>>>>>>>>>>> INSTRUÇÕES <<<<<<<<<<<<<<<<<<<<<<<<
+INSTRUÇÕES
 
 MOVIMENTAÇÃO:
 - Utilize as setas direcionais ou as teclas: AWSD
